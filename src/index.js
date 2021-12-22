@@ -1,77 +1,32 @@
 import './style.css';
+import { gameInt, fetchData, submitData } from './apiCommunication.js';
+import { display } from './display.js';
 
-// create the game ID
+// create the game setting
 let gameId = 'Still loading';
-fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
-  method: 'POST',
-  body: JSON.stringify({
-    name: 'Dib game',
-  }),
-  headers: {
-    'Content-type': 'application/json; charset=UTF-8',
-  },
-})
-  .then((response) => response.json())
-  .then((json) => {
-    gameId = json.result.replace('Game with ID: ', '').replace(' added.', '');
-  });
+const url = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const gameName = 'dib Game v-1.0';
 
-const display = (result) => {
-  const list = document.getElementById('list');
-  list.innerHTML = '';
-  for (let i = 0; i < result.length; i += 1) {
-    const listItem = document.createElement('li');
-    listItem.classList.add('list-li-0');
-    if (i % 2 === 0) {
-      listItem.classList.add('list-li-0');
-    } else {
-      listItem.classList.add('list-li-1');
-    }
-    listItem.innerHTML = `${result[i].user}: ${result[i].score}`;
-    list.appendChild(listItem);
-  }
-};
+// int the game
+gameInt(url, gameName).then((response) => {
+  gameId = response;
+});
 
-const component = () => {
-  const element = document.createElement('div');
-
+const appCore = () => {
+  // refresh action
   const refresh = document.getElementById('refresh');
   refresh.addEventListener('click', () => {
-    let result;
-    fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
-      method: 'GET',
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        result = json.result;
-        display(result);
-      });
+    fetchData(url, gameId).then((response) => {
+      display(response);
+    });
   });
 
+  // submit action
   const submit = document.getElementById('submit');
   submit.addEventListener('click', () => {
-    const name = document.getElementById('name').value;
-    const score = document.getElementById('score').value;
-    fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
-      method: 'POST',
-      body: JSON.stringify({
-        user: `${name}`,
-        score: `${score}`,
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then((response) => response.json())
-      .then((json) => {
-        console.log(json);
-      });
+    submitData(url, gameId);
   });
-
-  return element;
 };
 
-document.body.appendChild(component());
+// run the game
+appCore();
