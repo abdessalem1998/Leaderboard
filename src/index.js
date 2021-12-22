@@ -15,9 +15,24 @@ fetch('https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/', {
   .then((json) => {
     gameId = json.result.replace('Game with ID: ', '').replace(' added.', '');
   });
-console.log(gameId);
+
 const component = () => {
   const element = document.createElement('div');
+
+  const refresh = document.getElementById('refresh');
+  refresh.addEventListener('click', () => {
+    fetch(`https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/${gameId}/scores/`, {
+      method: 'GET',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+      });
+  });
+
   return element;
 };
 
