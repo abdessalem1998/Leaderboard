@@ -37,10 +37,12 @@ body {
   margin: auto 0;
   height: 40px;
   width: 150px;
+  border-radius: 15px;
 }
 
 .list {
   border-style: solid;
+  border-radius: 15px;
 }
 
 .list-ul {
@@ -52,6 +54,7 @@ body {
 .list-li-0 {
   padding: 2% 1%;
   border-bottom: solid;
+  border-radius: 15px;
 }
 
 .list-li-1 {
