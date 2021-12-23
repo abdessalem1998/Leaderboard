@@ -2,7 +2,7 @@
 
 > The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 
-<img width="954" alt="score" src="https://user-images.githubusercontent.com/89970442/147161745-a989da1d-1d50-48e1-97e9-6c3e73c76527.PNG">
+<img width="952" alt="score" src="https://user-images.githubusercontent.com/89970442/147233046-67885f75-43b7-4f87-8531-6a2e9bb03fae.PNG">
 
 ## Built With
 
@@ -14,13 +14,13 @@
 
 ## Live Demo
 
-Coming soon
+- [Live Demo](https://abdessalem1998.github.io/Leaderboard/dist/)
 
 ## Installation
 
 Go to your terminal, navigate to your working directory and run
 
-`git clone https://github.com/anuarshaidenov/leaderboard.git`
+`git clone https://github.com/abdessalem1998/Leaderboard.git`
 
 After that navigate to the newly created folder
 
