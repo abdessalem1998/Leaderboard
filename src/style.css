@@ -64,10 +64,13 @@ body {
   flex-grow: 2;
   margin-left: 5%;
   margin-right: 5%;
+  border: 4px solid gray;
+  border-radius: 15px;
 }
 
 .app-add-h2 {
   width: 100%;
+  color: #e1e3e1;
   font-size: 35px;
   text-align: center;
 }
@@ -76,13 +79,16 @@ body {
   width: 90%;
   margin: 3% 4%;
   height: 35px;
-  border-bottom: 3px solid;
+  border: 4px solid gray;
+  border-radius: 15px;
 }
 
 .submit {
   margin-top: 3%;
   position: absolute;
-  background-color: white;
+  background-color: gray;
+  border: 4px solid gray;
+  border-radius: 15px;
   right: 130px;
   height: 40px;
   width: 80px;
