@@ -1,1 +1,36 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Wbpack Exercise</title><script defer="defer" src="main.js"></script></head><body><h1>Hello webpack!</h1></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wbpack Exercise</title>
+<script defer src="main.js"></script></head>
+<body>
+    <h1 class="app-title">Leaderboard</h1>
+    <div class="app-container">
+      <div class="app-list">
+        <div class="app-list-upper">
+          <h2 class="app-list-h2">Recent scores</h2>
+          <button class="app-btn-refresh" type="button" id="refresh" name="button"><b>Refresh</b></button>
+        </div>
+        <div class="list">
+          <ul class="list-ul" id="list">
+          </ul>
+        </div>
+      </div>
+      <div class="app-add">
+          <h2 class="app-add-h2">Add your score</h2>
+          <input class="input" id="name" type="text" placeholder="Your name" name="name" value="">
+          <input class="input" id="score" type="number" placeholder="Your score" name="score" value="">
+          <div>
+            <button class="submit" id="submit" type="button" name="button"><b>Submit</b></button>
+          </div>
+          <div id="notify" class="notify hide">
+            <span class="">please wait we are sending data to the Api ...</span>
+          </div>
+
+      </div>
+
+    </div>
+</body>
+</html>

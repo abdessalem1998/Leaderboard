@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 0;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
 }
 
 .app-title {
@@ -36,10 +37,12 @@ body {
   margin: auto 0;
   height: 40px;
   width: 150px;
+  border-radius: 15px;
 }
 
 .list {
   border-style: solid;
+  border-radius: 15px;
 }
 
 .list-ul {
@@ -51,6 +54,7 @@ body {
 .list-li-0 {
   padding: 2% 1%;
   border-bottom: solid;
+  border-radius: 15px;
 }
 
 .list-li-1 {
@@ -63,10 +67,13 @@ body {
   flex-grow: 2;
   margin-left: 5%;
   margin-right: 5%;
+  border: 4px solid gray;
+  border-radius: 15px;
 }
 
 .app-add-h2 {
   width: 100%;
+  color: #e1e3e1;
   font-size: 35px;
   text-align: center;
 }
@@ -75,14 +82,30 @@ body {
   width: 90%;
   margin: 3% 4%;
   height: 35px;
-  border-bottom: 3px solid;
+  border: 4px solid gray;
+  border-radius: 15px;
 }
 
 .submit {
-  margin-top: 3%;
+  margin-top: 5%;
   position: absolute;
-  background-color: white;
+  background-color: gray;
+  border: 4px solid gray;
+  border-radius: 15px;
   right: 130px;
   height: 40px;
   width: 80px;
+}
+
+.notify {
+  text-align: center;
+  align-content: center;
+  border: 1px solid gray;
+  border-radius: 15px;
+  background-color: white;
+  margin: 2% 2% 2% 2%;
+}
+
+.hide {
+  visibility: hidden;
 }
