@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 export const display = (result) => {
   const list = document.getElementById('list');
   list.innerHTML = '';
@@ -13,4 +12,8 @@ export const display = (result) => {
     listItem.innerHTML = `${result[i].user}: ${result[i].score}`;
     list.appendChild(listItem);
   }
+};
+
+export const removeNotify = () => {
+  document.getElementById('notify').classList.add('hide');
 };

@@ -1,6 +1,6 @@
 import './style.css';
 import { gameInt, fetchData, submitData } from './apiCommunication.js';
-import { display } from './display.js';
+import { display, removeNotify } from './display.js';
 
 // create the game setting
 let gameId = 'Still loading';
@@ -24,7 +24,9 @@ const appCore = () => {
   // submit action
   const submit = document.getElementById('submit');
   submit.addEventListener('click', () => {
+    document.getElementById('notify').classList.remove('hide');
     submitData(url, gameId);
+    setTimeout(removeNotify, 3000);
   });
 };
 
